@@ -76,3 +76,16 @@ Company.prototype.calculateTotalPayroll = function () {
 // Test Case for Task 4
 console.log(company.calculateTotalPayroll()); // Expected output: 165600
 
+// Task 5: Implementing Promotions
+
+Company.prototype.promoteToManager = function (employee, teamSize) {
+    const index = this.employees.indexOf(employee);
+    if (index !== -1) {
+        const promotedEmployee = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+        this.employees[index] = promotedEmployee;
+    }
+};
+
+// Test for Task 5
+company.promoteToManager(emp1, 3); // Promotes Employee
+company.listEmployees(); // New list of employees
