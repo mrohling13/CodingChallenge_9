@@ -15,6 +15,8 @@ class Employee {
     }
 };
 
+// Test for Task 1
+
 const emp1 = new Employee("Alice Johnson", "101", "Sales", 5000); // Employee Entry
 console.log(emp1.getDetails()); // Prints Employee Details
 
@@ -31,13 +33,36 @@ class Manager extends Employee {
     calculateBonus() {
         return this.salary * 12 * 0.10; // calculate bonus
     }
-    // Task 4 modification
+    
     calculateAnnualSalary() {
         return this.salary * 12 + this.calculateBonus();
     }
 }; // manager class
 
+// Test for task 2
+
 const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5); // new manager
 console.log(mgr1.getDetails()); // Print manager details
 console.log(mgr1.calculateBonus()); // Print manager bonus
+
+// Task 3: Creating a Company Class
+
+class Company {
+    constructor(name) {
+        this.name = name; // Name of company
+        this.employees = []; // Company employees
+    };
+    addEmployee(employee) {
+        this.employees.push(employee); // Adds employee to the company
+    }
+    listEmployees() {
+        this.employees.forEach(employee => console.log(employee.getDetails())); // Lists all employees
+    }
+}
+// Test for Task 3
+
+const company = new Company("TechCorp");
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees();
 
