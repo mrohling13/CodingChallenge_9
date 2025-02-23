@@ -66,3 +66,13 @@ company.addEmployee(emp1);
 company.addEmployee(mgr1);
 company.listEmployees();
 
+// Task 4: Implementing a Payroll System
+Company.prototype.calculateTotalPayroll = function () {
+    return this.employees.reduce((total, employee) => {
+        return total + (employee.calculateAnnualSalary() + (employee.calculateBonus ? employee.calculateBonus() : 0));
+    }, 0);
+};
+
+// Test Case for Task 4
+console.log(company.calculateTotalPayroll()); // Expected output: 165600
+
