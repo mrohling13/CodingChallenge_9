@@ -69,7 +69,7 @@ company.listEmployees();
 // Task 4: Implementing a Payroll System
 Company.prototype.calculateTotalPayroll = function () {
     return this.employees.reduce((total, employee) => {
-        return total + (employee.calculateAnnualSalary() + (employee.calculateBonus ? employee.calculateBonus() : 0));
+        return total + employee.calculateAnnualSalary(); // Only include annual salary
     }, 0);
 };
 
